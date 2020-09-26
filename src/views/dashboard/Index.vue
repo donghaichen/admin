@@ -1,16 +1,590 @@
 <template>
     <div class="dashboard">
-        Dashboard
-        <div class="ant-list ant-list-vertical ant-list-lg ant-list-split ant-list-something-after-last-item"><div class="ant-spin-nested-loading"><div class="ant-spin-container"><ul class="ant-list-items"><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Alipay</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png"></span><a href="https://ant.design">付小小</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 14:18</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>120</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>124</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>13</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Angular</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png"></span><a href="https://ant.design">曲丽丽</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 12:18</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>164</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>114</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>11</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Ant Design</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png"></span><a href="https://ant.design">林东东</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 10:18</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>141</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>146</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>13</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Ant Design Pro</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png"></span><a href="https://ant.design">周星星</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 08:18</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>118</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>106</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>11</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Bootstrap</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png"></span><a href="https://ant.design">吴加好</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 06:18</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>156</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>156</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>11</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Alipay</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png"></span><a href="https://ant.design">付小小</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 15:27</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>130</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>119</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>16</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Angular</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png"></span><a href="https://ant.design">曲丽丽</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 13:27</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>152</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>196</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>17</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Ant Design</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png"></span><a href="https://ant.design">林东东</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 11:27</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>141</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>188</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>16</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Ant Design Pro</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png"></span><a href="https://ant.design">周星星</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 09:27</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>142</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>169</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>17</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li><li class="ant-list-item"><div class="ant-list-item-main"><div class="ant-list-item-meta"><div class="ant-list-item-meta-content"><h4 class="ant-list-item-meta-title"><a class="antd-pro-pages-list-search-articles-style-listItemMetaTitle" href="https://ant.design">Bootstrap</a></h4><div class="ant-list-item-meta-description"><span><span class="ant-tag">Ant Design</span><span class="ant-tag">设计语言</span><span class="ant-tag">蚂蚁金服</span></span></div></div></div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-listContent"><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-description">段落示意：蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。</div><div class="antd-pro-pages-list-search-articles-components-article-list-content-index-extra"><span class="ant-avatar ant-avatar-sm ant-avatar-circle ant-avatar-image"><img src="https://gw.alipayobjects.com/zos/rmsportal/siCrBXXhmvTQGWPNLBow.png"></span><a href="https://ant.design">吴加好</a> 发布在 <a href="https://ant.design">https://ant.design</a><em>2020-09-25 07:27</em></div></div><ul class="ant-list-item-action"><li><span><span role="img" aria-label="star" class="anticon anticon-star" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="star" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"></path></svg></span>169</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="like" class="anticon anticon-like" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="like" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"></path></svg></span>109</span><em class="ant-list-item-action-split"></em></li><li><span><span role="img" aria-label="message" class="anticon anticon-message" style="margin-right: 8px;"><svg viewBox="64 64 896 896" focusable="false" class="" data-icon="message" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M464 512a48 48 0 1096 0 48 48 0 10-96 0zm200 0a48 48 0 1096 0 48 48 0 10-96 0zm-400 0a48 48 0 1096 0 48 48 0 10-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 00-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 00-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 00112 714v152a46 46 0 0046 46h152.1A449.4 449.4 0 00510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 00142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"></path></svg></span>17</span></li></ul></div><div class="ant-list-item-extra"><div class="antd-pro-pages-list-search-articles-style-listItemExtra"></div></div></li></ul></div></div><div style="text-align: center; margin-top: 16px;"><button type="button" class="ant-btn" ant-click-animating-without-extra-node="false" style="padding-left: 48px; padding-right: 48px;"><span>加载更多</span></button></div></div>
+        <a-row :gutter="[16,16]">
+            <a-col :span="6">
+                <a-card  :bordered="false">
+                    <div class="chartCard">
+                        <div class="chartHeader">
+                            <div class="metaWrap">
+                                <div class="meta"><span>访客</span></div>
+                                <div class="total"><span>{{view.total}}</span></div>
+                            </div>
+                            <div class="action">
+                                <a-tooltip>
+                                    <template v-slot:title>
+                                        全站总访客量
+                                    </template>
+                                    <QuestionCircleOutlined />
+                                </a-tooltip>
+                            </div>
+                        </div>
+                        <div class="chartContent">
+                            <canvas id="canvas-0" width="310" height="55" style="width: 100%; height:auto; cursor: default;"></canvas>
+                        </div>
+                        <div class="chartFooter">
+                            <span class="label">近一月访客量</span>
+                            <span class="number">{{parseInt(view.total / 100 + Math.random() * 10)}}</span>
+                        </div>
+                    </div>
+                </a-card>
+            </a-col>
+            <a-col :span="6">
+                <a-card  :bordered="false">
+                    <div class="chartCard">
+                        <div class="chartHeader">
+                            <div class="metaWrap">
+                                <div class="meta"><span>产品</span></div>
+                                <div class="total"><span>{{view.product}}</span></div>
+                            </div>
+                            <div class="action">
+                                <a-tooltip>
+                                    <template v-slot:title>
+                                        产品总浏览量
+                                    </template>
+                                    <QuestionCircleOutlined />
+                                </a-tooltip>
+                            </div>
+                        </div>
+                        <div class="chartContent">
+                            <canvas id="canvas-1" width="310" height="55" style="width: 100%; height:auto; cursor: default;"></canvas>
+                        </div>
+                        <div class="chartFooter">
+                            <span class="label">产品总量</span>
+                            <span class="number">99</span>
+                        </div>
+                    </div>
+                </a-card>
+            </a-col>
+            <a-col :span="6">
+                <a-card  :bordered="false">
+                    <div class="chartCard">
+                        <div class="chartHeader">
+                            <div class="metaWrap">
+                                <div class="meta"><span>新闻</span></div>
+                                <div class="total"><span>{{view.news}}</span></div>
+                            </div>
+                            <div class="action">
+                                <a-tooltip>
+                                    <template v-slot:title>
+                                       新闻总浏览量
+                                    </template>
+                                    <QuestionCircleOutlined />
+                                </a-tooltip>
+                            </div>
+                        </div>
+                        <div class="chartContent">
+                            <canvas id="canvas-2" width="310" height="55" style="width: 100%; height:auto; cursor: default;"></canvas>
+                        </div>
+                        <div class="chartFooter">
+                            <span class="label">新闻总量</span>
+                            <span class="number">299</span>
+                        </div>
+                    </div>
+                </a-card>
+            </a-col>
+            <a-col :span="6">
+                <a-card  :bordered="false">
+                    <div class="chartCard">
+                        <div class="chartHeader">
+                            <div class="metaWrap">
+                                <div class="meta"><span>系统负载</span></div>
+                                <div class="total"><span>{{system.load}}%</span></div>
+                            </div>
+                            <div class="action">
+                                <a-popover title="负载百分比的含意">
+                                    <template v-slot:content>
+                                        <p>50% 以下  - 低负载状态运行</p>
+                                        <p>50 ~ 80%  - 负载正常</p>
+                                        <p>80% ~ 100% - 负载超核，需尽快排查</p>
+                                    </template>
+                                    <QuestionCircleOutlined />
+                                </a-popover>
+                            </div>
+                        </div>
+                        <div class="chartContent">
+                            <a-progress :showInfo="false" :percent="system.load" status="active" :stroke-color="{'0%': '#1890ff','100%': '#f5222d',}" />
+                            <a-progress style="margin-top: 10px;" :showInfo="false" :percent="system.storage" status="active" :stroke-color="{'0%': '#13c2c2','100%': '#f5222d',}"/>
+                        </div>
+                        <div class="chartFooter">
+                            <a-row :gutter="[16,16]">
+                                <a-col :span="12">
+                                    <span class="label">系统负载</span>
+                                    <span class="number">{{system.load}}%</span>
+                                </a-col>
+                                <a-col :span="12">
+                                    <span class="label">硬盘使用</span>
+                                    <span class="number">{{system.storage}}%</span>
+                                </a-col>
+                            </a-row>
+                        </div>
+                    </div>
+                </a-card>
+            </a-col>
+        </a-row>
+        <a-row :gutter="[16,16]">
+            <a-col :span="24">
+                <a-card :bordered="false" >
+                    <a-tabs @change="callback">
+                        <a-tab-pane key="1" tab="流量分析">
+                            <canvas width="100%" height="400" id="canvas"></canvas>
+                        </a-tab-pane>
+                    </a-tabs>
+                </a-card>
+
+            </a-col>
+        </a-row>
+        <a-row :gutter="[16,16]">
+            <a-col :span="12">
+                <a-card :bordered="false" style="height: 420px; overflow: hidden;">
+                    <a-tabs @change="callback" style="margin-top: -10px;">
+                        <a-tab-pane key="1" tab="新闻">
+                            <a-table :columns="columns" :data-source="data" :pagination="false">
+                                <template v-slot:name="{ text }">
+                                    <a>{{ text }}</a>
+                                </template>
+                            </a-table>
+                        </a-tab-pane>
+                        <a-tab-pane key="2" tab="产品" force-render>
+                            Content of Tab Pane 2
+                        </a-tab-pane>
+                    </a-tabs>
+                </a-card>
+            </a-col>
+            <a-col :span="6">
+                <a-card title="登录日志" :bordered="false" style="height:420px; overflow: hidden;">
+                    <a-table :columns="columns1" :data-source="data1" :pagination="false" style="margin-top: -3px;">
+                        <template v-slot:name="{ text }">
+                            <a>{{ text }}</a>
+                        </template>
+                    </a-table>
+                </a-card>
+            </a-col>
+            <a-col :span="6">
+                <a-card title="更新记录" :bordered="false" style="height: 420px; overflow: hidden;">
+                    <a-timeline style="margin-top: -10px;">
+                        <a-timeline-item style="padding: 13px 0;">创建服务现场 2015-09-01</a-timeline-item>
+                        <a-timeline-item style="padding: 13px 0;">初步排除网络异常 2015-09-01</a-timeline-item>
+                        <a-timeline-item style="padding: 13px 0;">技术测试异常 2015-09-01</a-timeline-item>
+                        <a-timeline-item style="padding: 13px 0;">网络异常正在修复 2015-09-01</a-timeline-item>
+                        <a-timeline-item style="padding: 13px 0;">Create a services site 2015-09-01</a-timeline-item>
+                        <a-timeline-item style="padding: 13px 0;">Create a services site 2015-09-01</a-timeline-item>
+                        <a-timeline-item style="padding: 13px 0;">Create a services site 2015-09-01</a-timeline-item>
+                    </a-timeline>
+                </a-card>
+            </a-col>
+        </a-row>
     </div>
 </template>
-
 <script>
+  import {
+    QuestionCircleOutlined,
+  } from '@ant-design/icons-vue';
+  const columns = [
+    {
+      title: '标题',
+      dataIndex: 'name',
+      ellipsis: true,
+    },
+    {
+      title: '分类',
+      dataIndex: 'money',
+      ellipsis: true,
+    },
+    {
+      title: '发布时间',
+      dataIndex: 'address',
+      ellipsis: true,
+    },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: '中国科学报：“中科院解决卡脖子问题”靠不靠谱？',
+      money: '行业新闻',
+      address: '2020年9月27日 02:21:40',
+    },
+    {
+      key: '2',
+      name: '英超-B费压哨点杀 曼联门框4度救险3-2逆转险胜',
+      money: '行业新闻',
+      address: '2020年9月27日 02:21:40',
+    },
+    {
+      key: '3',
+      name: '校场：看似重要的空降坦克为何成了鸡肋？',
+      money: '行业新闻',
+      address: '2020年9月27日 02:21:40',
+    },
+    {
+      key: '4',
+      name: '校场：看似重要的空降坦克为何成了鸡肋？',
+      money: '行业新闻',
+      address: '2020年9月27日 02:21:40',
+    },
+    {
+      key: '5',
+      name: '校场：看似重要的空降坦克为何成了鸡肋？',
+      money: '行业新闻',
+      address: '2020年9月27日 02:21:40',
+    },
+  ];
+
+  const columns1 = [
+    {
+      title: '用户名',
+      dataIndex: 'name',
+      ellipsis: true,
+    },
+    {
+      title: '登录时间',
+      dataIndex: 'money',
+      ellipsis: true,
+    },
+    {
+      title: '登录 IP',
+      ellipsis: true,
+      dataIndex: 'address',
+    },
+  ];
+  const data1 = [
+    {
+      key: '1',
+      name: 'admin',
+      money: '2020年9月27日 02:21:40',
+      address: '127.0.0.1',
+    },
+    {
+      key: '2',
+      name: 'admin',
+      money: '2020年9月27日 02:21:40',
+      address: '127.0.0.1',
+    },
+    {
+      key: '3',
+      name: 'admin',
+      money: '2020年9月27日 02:21:40',
+      address: '127.0.0.1',
+    },
+    {
+      key: '3',
+      name: 'admin',
+      money: '2020年9月27日 02:21:40',
+      address: '127.0.0.1',
+    },
+    {
+      key: '3',
+      name: 'admin',
+      money: '2020年9月27日 02:21:40',
+      address: '127.0.0.1',
+    },
+  ];
+
   export default {
-    name: "Dashboard"
+    components: {
+      QuestionCircleOutlined
+
+    },
+    data() {
+      return {
+        data,
+        columns,
+        data1,
+        columns1,
+        system: {
+          load: 79.57,
+          storage: 65.38
+        },
+        view: {
+          news: 50,
+          product: 90,
+          total: 90
+        },
+
+      }
+    },
+    watch: {
+
+    },
+    mounted() {
+      this.init()
+    },
+    methods: {
+      init() {
+        setInterval(() => {
+          this.system.load = this.randomNum(5000, 9500) / 100
+          this.system.storage = this.randomNum(6000, 7000) / 100
+        }, 3000)
+        this.view.news = this.randomNum(3000, 4000)
+        this.view.product = this.randomNum(3000, 3500)
+        this.view.total = this.randomNum(8000, 10000)
+        this.initCanvas()
+      },
+      randomNum(minNum, maxNum) {
+        return parseInt(Math.random() * ( maxNum - minNum + 1 ) + minNum, 10)
+      },
+      initCanvas() {
+        function appendChild(url, type = 'script') {
+          let head = document.head || document.getElementsByTagName('head')[0];
+          let script = document.createElement(type);
+          script.setAttribute("src", url);
+          head.appendChild(script);
+        }
+        appendChild('https://www.chartjs.org/dist/2.9.3/Chart.min.js')
+        appendChild('https://www.chartjs.org/samples/latest/utils.js')
+        window.onload = () => {
+          function randomNum(minNum, maxNum) {
+            return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
+          }
+          let color = [
+            'rgb(24, 144, 255)',
+            'rgb(255, 99, 132)',
+            'rgb(153, 102, 255)',
+          ]
+          let borderWidth = [
+            0, 0, 3
+          ]
+          let fill = [
+            true,true,false
+          ]
+          let data = [
+            [
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+            ],
+            [
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+            ],
+            [
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+              randomNum(10, 100),
+            ]
+          ]
+          function getData(index) {
+            return  {
+              labels: ['','','','','','','','','','','',''],
+              datasets: [{
+                data:  data[index],
+                backgroundColor: color[index],
+                borderWidth: borderWidth[index],
+                borderColor: color[index],
+                pointRadius: 0,
+                fill: fill[index],
+              }]
+            }
+          }
+          function getOptions()
+          {
+            return {
+              animation:{
+                duration: 3000
+              },
+              layout: {
+                padding: {
+                  left: -5,
+                  right: 0,
+                  top: 0,
+                  bottom: -10
+                }
+              },
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    display:false
+                  },
+                  ticks: { //刻度
+                    display:false
+                  }
+                }],
+                yAxes: [{
+                  gridLines: {
+                    display:false
+                  },
+                  ticks: { //刻度
+                    display:false,
+                    beginAtZero: true
+                  }
+                }]
+              },
+              legend: {
+                display: false
+              },
+              tooltips: {
+                enabled: false
+              }
+            }
+          }
+          let ctx1 = document.getElementById('canvas-0').getContext('2d');
+          new window.Chart(ctx1, {
+            type: "line",
+            data: getData(0),
+            options: getOptions(0),
+          });
+          let ctx2 = document.getElementById('canvas-1').getContext('2d');
+          new window.Chart(ctx2, {
+            type: "bar",
+            data: getData(1),
+            options: getOptions(1),
+          })
+          let ctx3 = document.getElementById('canvas-2').getContext('2d');
+          new window.Chart(ctx3, {
+            type: "line",
+            data: getData(2),
+            options: getOptions(2),
+          })
+          var config = {
+            type: 'line',
+            data: {
+              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              datasets: [{
+                label: '总访问量',
+                backgroundColor: color[0],
+                borderColor: color[0],
+                data: [
+                  randomNum(8000, 30000),
+                  randomNum(8000, 30000),
+                  randomNum(8000, 30000),
+                  randomNum(8000, 30000),
+                  randomNum(8000, 30000),
+                  randomNum(8000, 30000),
+                  randomNum(8000, 30000),
+                ],
+                fill: false,
+              }, {
+                label: '产品访问量',
+                fill: false,
+                backgroundColor: color[1],
+                borderColor: color[1],
+                data: [
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                ],
+              }, {
+                label: '新闻访问量',
+                fill: false,
+                backgroundColor: color[2],
+                borderColor: color[2],
+                data: [
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                  randomNum(1000, 10000),
+                ],
+              }]
+            },
+            options: {
+              responsive: true,
+              title: {
+                display: false,
+              }
+            }
+          };
+          let ctx = document.getElementById('canvas').getContext('2d');
+          window.myLine = new window.Chart(ctx, config);
+        }
+      },
+    },
   }
 </script>
 
 <style scoped>
-
+    .chartCard {
+        position: relative;
+    }
+    .chartHeader {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .chartHeader .metaWrap {
+        float: left;
+    }
+    .chartHeader .metaWrap .meta {
+        height: 22px;
+        color: rgba(0,0,0,.45);
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .chartHeader .action {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        line-height: 1;
+        cursor: pointer;
+    }
+    .chartHeader .total {
+        height: 38px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        overflow: hidden;
+        color: rgba(0,0,0,.85);
+        font-size: 30px;
+        line-height: 38px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-break: break-all;
+    }
+    .chartContent {
+        position: relative;
+        width: 100%;
+        height: 55px;
+    }
+    .chartHeader .chart {
+        position: absolute;
+        bottom: -28px;
+        width: 100%;
+    }
+    .chartFooter {
+        margin-top: 10px;
+        padding-top: 5px;
+        border-top: 1px solid #f0f0f0;
+        height: 31px;
+        overflow: hidden;
+    }
+    .chartFooter .label {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .chartFooter .number {
+        margin-left: 8px;
+        color: rgba(0,0,0,.85);
+    }
 </style>

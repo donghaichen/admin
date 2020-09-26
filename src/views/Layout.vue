@@ -1,24 +1,65 @@
 <template>
     <a-spin class="global-loading" v-if="globalLoading"/>
     <a-layout id="components-layout-demo-custom-trigger">
-        <a-layout-sider v-model:collapsed="collapsed" :trigger="null" :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }" collapsible>
-            <div class="logo" />
-            <a-menu theme="dark" mode="inline" v-model:selectedKeys="selectedKeys">
-                <a-menu-item key="1">
-                    <user-outlined />
-                    <span>nav 1</span>
+        <a-layout-sider v-model:collapsed="collapsed" collapsedWidth="50" :trigger="null" :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }" collapsible>
+            <div class="sider-logo">
+                <a>
+                    <img src="../assets/img/logo-tran.png" alt="logo">
+                    <h1 v-if="!collapsed">后台管理系统</h1>
+                </a>
+            </div>
+            <a-menu
+                    v-model:openKeys="openKeys"
+                    v-model:selectedKeys="selectedKeys"
+                    @openChange="openChange"
+                    @select="select"
+                    mode="inline"
+                    theme="dark"
+                    :multiple="false"
+                    :inline-collapsed="collapsed"
+                    v-for="(item, index) in nav" :key="index"
+            >
+                <a-menu-item v-if="!item.sub" :key="index">
+                    <span v-if="index === 0">
+                        <DashboardOutlined />
+                    </span>
+                    <span v-else-if="index === 6">
+                        <ShoppingCartOutlined />
+                    </span>
+                    <span>{{item.title}}</span>
                 </a-menu-item>
-                <a-menu-item key="2">
-                    <video-camera-outlined />
-                    <span>nav 2</span>
-                </a-menu-item>
-                <a-menu-item key="3">
-                    <upload-outlined />
-                    <span>nav 3</span>
-                </a-menu-item>
+                <a-sub-menu v-else :key="'sub' + index">
+                    <template v-slot:title>
+                         <span v-if="index ===1">
+                            <SettingOutlined />
+                         </span>
+                        <span v-else-if="index === 2">
+                            <ClusterOutlined />
+                        </span>
+                        <span v-else-if="index === 3">
+                            <BarsOutlined />
+                        </span>
+                        <span v-else-if="index === 4">
+                            <FormOutlined />
+                        </span>
+                        <span v-else-if="index === 5">
+                            <LineChartOutlined />
+                        </span>
+                        <span v-else-if="index === 7">
+                            <TeamOutlined />
+                        </span>
+                        <span v-else-if="index === 8">
+                           <InsuranceOutlined />
+                        </span>
+                        <span>{{item.title}}</span>
+                    </template>
+                    <a-menu-item v-for="(subItem, subIndex) in item.sub" :key="'sub' + index + '-' + subIndex">
+                        {{subItem.title}}
+                    </a-menu-item>
+                </a-sub-menu>
             </a-menu>
         </a-layout-sider>
-        <div v-if="collapsed" style="width: 80px; overflow: hidden; flex: 0 0 80px; max-width: 80px; min-width: 80px;"></div>
+        <div v-if="collapsed" style="width: 50px; overflow: hidden; flex: 0 0 50px; max-width: 50px; min-width: 50px;"></div>
         <div v-if="!collapsed" style="width: 200px; overflow: hidden; flex: 0 0 200px; max-width: 208px; min-width: 200px;"></div>
         <a-layout style="position: relative;">
             <a-layout-header :style="collapsed ? headerStyle : headerWideStyle" class="layout-header">
@@ -32,7 +73,7 @@
                             <template v-slot:title>
                                 <span>访问网站</span>
                             </template>
-                            <a href="/" target="_blank" style="font-size: 18px; padding: 0 10px;" role="img">
+                            <a href="/" target="_blank" style="font-size: 16px; padding: 0 10px;" role="img">
                                 <HomeOutlined />
                             </a>
                         </a-tooltip>
@@ -40,12 +81,16 @@
                             <template v-slot:title>
                                 <span>清除缓存</span>
                             </template>
-                            <a @click="clearCache" style="font-size: 18px; padding: 0 10px;" role="img">
+                            <a @click="clearCache" style="font-size: 16px; padding: 0 10px;" role="img">
                                 <ClearOutlined />
                             </a>
                         </a-tooltip>
                         <a-dropdown>
-                            <a class="ant-dropdown-link" @click="e => e.preventDefault()"><a-avatar size="small"><SmileOutlined/></a-avatar> Hello, admin <DownOutlined /> </a>
+                            <a class="ant-dropdown-link" @click="e => e.preventDefault()">
+                                <a-avatar size="small" src="https://i.gtimg.cn/club/item/face/img/8/15918_100.gif"/>
+                                Hello, admin
+                                <DownOutlined />
+                            </a>
                             <template v-slot:overlay>
                                 <a-menu>
                                     <a-menu-item key="0">
@@ -65,7 +110,12 @@
                             </template>
                         </a-dropdown>
                         <a-dropdown>
-                            <a class="ant-dropdown-link" @click="e => e.preventDefault()"><i class="anticon" title="语言"><svg viewBox="0 0 24 24" focusable="false" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z " class="css-c4d79v"></path></svg></i> <DownOutlined /> </a>
+                            <a class="ant-dropdown-link" @click="e => e.preventDefault()">
+                                <i class="anticon" style="color:rgba(0, 0, 0, 0.5);font-size: 16px;">
+                                    <TranslationOutlined />
+                                </i>
+                                <DownOutlined />
+                            </a>
                             <template v-slot:overlay>
                                 <a-menu>
                                     <a-menu-item>
@@ -100,42 +150,104 @@
 </template>
 <script>
   import {
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
+    DashboardOutlined,
+    ShoppingCartOutlined,
+    SettingOutlined,
+    ClusterOutlined,
+    BarsOutlined,
+    FormOutlined,
+    LineChartOutlined,
+    TeamOutlined,
+    InsuranceOutlined,
+    // PieChartOutlined,
+    // MailOutlined,
+    // DesktopOutlined,
+    // InboxOutlined,
+    // AppstoreOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
     HomeOutlined,
     ClearOutlined,
-    SmileOutlined,
+    TranslationOutlined,
   } from '@ant-design/icons-vue';
 
   export default {
     components: {
-      UserOutlined,
-      VideoCameraOutlined,
-      UploadOutlined,
+      DashboardOutlined,
+      ShoppingCartOutlined,
+      SettingOutlined,
+      ClusterOutlined,
+      BarsOutlined,
+      FormOutlined,
+      LineChartOutlined,
+      TeamOutlined,
+      InsuranceOutlined,
+      // PieChartOutlined,
+      // MailOutlined,
+      // DesktopOutlined,
+      // InboxOutlined,
+      // AppstoreOutlined,
       MenuUnfoldOutlined,
       MenuFoldOutlined,
       HomeOutlined,
       ClearOutlined,
-      SmileOutlined,
+      TranslationOutlined,
     },
     data() {
       return {
-        selectedKeys: ['1'],
+        selectedKeys: [0],
+        openKeys: [''],
+        preOpenKeys: ['sub1'],
+        nav: [],
         collapsed: false,
         globalLoading: true,
-        headerStyle: 'background: #fff; padding: 0;position: fixed; width: calc(100vw - 80px);',
+        headerStyle: 'background: #fff; padding: 0;position: fixed; width: calc(100vw - 50px);',
         headerWideStyle: 'background: #fff; padding: 0;position: fixed; width: calc(100vw - 200px);',
       };
     },
+    watch: {
+      openKeys(val, oldVal) {
+        this.preOpenKeys = oldVal;
+      },
+    },
     mounted() {
+      this.init()
       setTimeout(() => {
         this.globalLoading = false
       }, 300)
     },
+    // create() {
+    //
+    //   // this.getNav()
+    //   // this.init()
+    // },
     methods: {
+      init() {
+        this.getNav()
+      },
+      getNav() {
+        let nav = localStorage.getItem('nav')
+        if(nav !== null && JSON.parse(nav).length > 0) {
+          this.nav = JSON.parse(nav)
+        }else{
+          fetch("http://demo.haoyupay.com/admin/api/v3/user/nav")
+            .then(res => {
+              return res.json();
+            })
+            .then(res => {
+              // 这里返回的数据就是我们想要请求的json数据
+              localStorage.setItem('nav', JSON.stringify(res.data))
+              this.nav = res.data
+            })
+        }
+      },
+      openChange(openKeys) {
+        let end = openKeys.pop()
+        this.openKeys = [end]
+      },
+      select(e) {
+        console.log(e)
+      },
       clearCache() {
         let key = 'clearCache'
         this.$message.loading({ content: '缓存数据清理中...', key });
@@ -161,6 +273,41 @@
         height: 32px;
         background: rgba(255, 255, 255, 0.2);
         margin: 16px;
+    }
+    .ant-menu-inline-collapsed{
+        width: 50px;
+    }
+    .ant-layout-sider-collapsed .ant-menu-item, .ant-layout-sider-collapsed .ant-menu-submenu .ant-menu-submenu-title{
+        padding: 0 15px !important;
+    }
+    .sider-logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        line-height: 32px;
+        cursor: pointer;
+    }
+    .ant-layout-sider-collapsed .sider-logo{
+        padding:  10px 5px;
+    }
+    .sider-logo img {
+        display: inline-block;
+        height: 40px;
+        vertical-align: middle;
+        transition: height .2s;
+    }
+    .sider-logo h1 {
+        display: inline-block;
+        height: 32px;
+        margin: 0 0 0 12px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 32px;
+        vertical-align: middle;
+        animation: fade-in;
+        animation-duration: .2s;
     }
     .global-loading{
         position: fixed!important;
@@ -212,9 +359,8 @@
         margin-right: 5px;
     }
     .global-content{
-        margin: 70px 16px 0;
+        margin: 70px 15px 16px;
         min-height: calc(100vh - 140px);
-        width: 100%;
         position: relative;
         overflow: hidden;
     }
