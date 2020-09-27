@@ -1,5 +1,6 @@
 <template>
     <div class="login-container">
+        <a-spin class="global-loading" v-if="globalLoading"/>
         <a-form>
             <div class="sider-logo">
                 <img v-if="!modelRef.facepalm" src="../assets/img/logo-tran.png" alt="logo">
@@ -31,15 +32,27 @@
   import { reactive, toRaw } from 'vue';
   import { UserOutlined, LockOutlined, } from '@ant-design/icons-vue';
   import { useForm } from '@ant-design-vue/use';
+  import router from "../router";
   export default {
     components: {
       UserOutlined,
       LockOutlined,
     },
+    data() {
+      return {
+        globalLoading: true
+      }
+    },
     mounted() {
+      this.init()
       this.$refs.usernameInput.focus()
     },
     methods: {
+      init() {
+        setTimeout(() => {
+          this.globalLoading = false
+        }, 800)
+      },
       passwordBlur() {
         this.modelRef.facepalm = false
         console.log('passwordBlur')
@@ -55,6 +68,7 @@
         password: '',
         loading : false,
         facepalm : false,
+        globalLoading: true
       });
       const rulesRef = reactive({
         username: [
@@ -75,6 +89,7 @@
         })
         .catch(err => {
           console.log('error', err);
+          router.push('/dashboard')
         });
         setTimeout(() => {
           modelRef.loading = false
@@ -97,6 +112,10 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        .global-loading{
+            background-color: transparent;
+            height: auto;
+        }
         .ant-form {
             position: absolute;
             max-width: 100%;

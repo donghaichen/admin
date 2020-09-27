@@ -11,12 +11,32 @@ const routes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('../views/dashboard/Index.vue'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('../views/dashboard/Index.vue'),
+        meta: { title: 'Dashboard', icon: 'dashboard' }
+      },
+      {
+        path: 'setting',
+        name: 'Setting',
+        component: () => import('../views/setting/Index.vue'),
+        meta: { title: 'Setting', icon: 'setting' }
+      },
+      {
+        path: 'setting/api',
+        name: 'SettingApi',
+        component: () => import('../views/setting/Api.vue'),
+        meta: { title: 'SettingApi', icon: 'SettingApi' }
+      },
+      // {
+      //   path: 'dashboard',
+      //   name: 'Dashboard',
+      //   component: () => import('../views/dashboard/Index.vue'),
+      //   meta: { title: 'Dashboard', icon: 'dashboard' }
+      // },
+    ]
   },
   // {
   //   path: '/',
