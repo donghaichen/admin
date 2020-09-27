@@ -7,7 +7,7 @@
                         <div class="chartHeader">
                             <div class="metaWrap">
                                 <div class="meta"><span>访客</span></div>
-                                <div class="total"><span>{{view.total}}</span></div>
+                                <div class="total"><span>{{view.total.toLocaleString()}}</span></div>
                             </div>
                             <div class="action">
                                 <a-tooltip>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="chartFooter">
                             <span class="label">近一月访客量</span>
-                            <span class="number">{{parseInt(view.total / 100 + Math.random() * 10)}}</span>
+                            <span class="number">{{parseInt(view.total / 100 + Math.random() * 10).toLocaleString()}}</span>
                         </div>
                     </div>
                 </a-card>
@@ -34,7 +34,7 @@
                         <div class="chartHeader">
                             <div class="metaWrap">
                                 <div class="meta"><span>产品</span></div>
-                                <div class="total"><span>{{view.product}}</span></div>
+                                <div class="total"><span>{{view.product.toLocaleString()}}</span></div>
                             </div>
                             <div class="action">
                                 <a-tooltip>
@@ -61,7 +61,7 @@
                         <div class="chartHeader">
                             <div class="metaWrap">
                                 <div class="meta"><span>新闻</span></div>
-                                <div class="total"><span>{{view.news}}</span></div>
+                                <div class="total"><span>{{view.news.toLocaleString()}}</span></div>
                             </div>
                             <div class="action">
                                 <a-tooltip>
@@ -160,7 +160,7 @@
                 </a-card>
             </a-col>
             <a-col :span="6">
-                <a-card title="更新记录" :bordered="false" style="height: 420px; overflow: hidden;">
+                <a-card title="更新日志" :bordered="false" style="height: 420px; overflow: hidden;">
                     <a-timeline style="margin-top: -10px;">
                         <a-timeline-item style="padding: 13px 0;">创建服务现场 2015-09-01</a-timeline-item>
                         <a-timeline-item style="padding: 13px 0;">初步排除网络异常 2015-09-01</a-timeline-item>
@@ -286,6 +286,7 @@
     },
     data() {
       return {
+        Chart: false,
         data,
         columns,
         data1,
@@ -302,13 +303,25 @@
 
       }
     },
-    watch: {
+    watch(){
 
+    },
+    created() {
+      // if (!this.Chart){
+      //   this.appendChild('https://www.chartjs.org/dist/2.9.3/Chart.min.js')
+      //   this.appendChild('https://www.chartjs.org/samples/latest/utils.js')
+      // }
     },
     mounted() {
       this.init()
     },
     methods: {
+       appendChild(url, type = 'script') {
+         let head = document.head || document.getElementsByTagName('head')[0];
+         let script = document.createElement(type);
+         script.setAttribute("src", url);
+         head.appendChild(script);
+       },
       init() {
         setInterval(() => {
           this.system.load = this.randomNum(5000, 9500) / 100
@@ -322,205 +335,195 @@
       randomNum(minNum, maxNum) {
         return parseInt(Math.random() * ( maxNum - minNum + 1 ) + minNum, 10)
       },
-      initCanvas() {
-        function appendChild(url, type = 'script') {
-          let head = document.head || document.getElementsByTagName('head')[0];
-          let script = document.createElement(type);
-          script.setAttribute("src", url);
-          head.appendChild(script);
-        }
-        appendChild('https://www.chartjs.org/dist/2.9.3/Chart.min.js')
-        appendChild('https://www.chartjs.org/samples/latest/utils.js')
-        window.onload = () => {
-          function randomNum(minNum, maxNum) {
-            return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10)
-          }
-          let color = [
-            'rgb(24, 144, 255)',
-            'rgb(255, 99, 132)',
-            'rgb(153, 102, 255)',
-          ]
-          let borderWidth = [
-            0, 0, 3
-          ]
-          let fill = [
-            true,true,false
-          ]
-          let data = [
-            [
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-            ],
-            [
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-            ],
-            [
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-              randomNum(10, 100),
-            ]
-          ]
-          function getData(index) {
-            return  {
-              labels: ['','','','','','','','','','','',''],
-              datasets: [{
-                data:  data[index],
-                backgroundColor: color[index],
-                borderWidth: borderWidth[index],
-                borderColor: color[index],
-                pointRadius: 0,
-                fill: fill[index],
-              }]
+      getOptions() {
+        return {
+          animation:{
+            duration: 3000
+          },
+          layout: {
+            padding: {
+              left: -15,
+              right: 0,
+              top: 0,
+              bottom: -10
             }
-          }
-          function getOptions()
-          {
-            return {
-              animation:{
-                duration: 3000
+          },
+          scales: {
+            xAxes: [{
+              gridLines: {
+                display:false
               },
-              layout: {
-                padding: {
-                  left: -5,
-                  right: 0,
-                  top: 0,
-                  bottom: -10
-                }
-              },
-              scales: {
-                xAxes: [{
-                  gridLines: {
-                    display:false
-                  },
-                  ticks: { //刻度
-                    display:false
-                  }
-                }],
-                yAxes: [{
-                  gridLines: {
-                    display:false
-                  },
-                  ticks: { //刻度
-                    display:false,
-                    beginAtZero: true
-                  }
-                }]
-              },
-              legend: {
-                display: false
-              },
-              tooltips: {
-                enabled: false
+              ticks: { //刻度
+                display:false
               }
-            }
-          }
-          let ctx1 = document.getElementById('canvas-0').getContext('2d');
-          new window.Chart(ctx1, {
-            type: "line",
-            data: getData(0),
-            options: getOptions(0),
-          });
-          let ctx2 = document.getElementById('canvas-1').getContext('2d');
-          new window.Chart(ctx2, {
-            type: "bar",
-            data: getData(1),
-            options: getOptions(1),
-          })
-          let ctx3 = document.getElementById('canvas-2').getContext('2d');
-          new window.Chart(ctx3, {
-            type: "line",
-            data: getData(2),
-            options: getOptions(2),
-          })
-          var config = {
-            type: 'line',
-            data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-              datasets: [{
-                label: '总访问量',
-                backgroundColor: color[0],
-                borderColor: color[0],
-                data: [
-                  randomNum(8000, 30000),
-                  randomNum(8000, 30000),
-                  randomNum(8000, 30000),
-                  randomNum(8000, 30000),
-                  randomNum(8000, 30000),
-                  randomNum(8000, 30000),
-                  randomNum(8000, 30000),
-                ],
-                fill: false,
-              }, {
-                label: '产品访问量',
-                fill: false,
-                backgroundColor: color[1],
-                borderColor: color[1],
-                data: [
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                ],
-              }, {
-                label: '新闻访问量',
-                fill: false,
-                backgroundColor: color[2],
-                borderColor: color[2],
-                data: [
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                  randomNum(1000, 10000),
-                ],
-              }]
-            },
-            options: {
-              responsive: true,
-              title: {
-                display: false,
+            }],
+            yAxes: [{
+              gridLines: {
+                display:false
+              },
+              ticks: { //刻度
+                display:false,
+                beginAtZero: true
               }
-            }
-          };
-          let ctx = document.getElementById('canvas').getContext('2d');
-          window.myLine = new window.Chart(ctx, config);
+            }]
+          },
+          legend: {
+            display: false
+          },
+          tooltips: {
+            enabled: false
+          }
         }
       },
+      getData(index,data, color, borderWidth, fill) {
+        return  {
+          labels: ['','','','','','','','','','','',''],
+          datasets: [{
+            data:  data[index],
+            backgroundColor: color[index],
+            borderWidth: borderWidth[index],
+            borderColor: color[index],
+            pointRadius: 0,
+            fill: fill[index],
+          }]
+        }
+      },
+      initCanvas() {
+        this.h5Canvas()
+      },
+      h5Canvas() {
+        this.Chart = true
+        let color = [
+          'rgb(24, 144, 255)',
+          'rgb(255, 99, 132)',
+          'rgb(153, 102, 255)',
+        ]
+        let borderWidth = [
+          0, 0, 3
+        ]
+        let fill = [
+          true,true,false
+        ]
+        let data = [
+          [
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+          ],
+          [
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+          ],
+          [
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+            this.randomNum(10, 100),
+          ]
+        ]
+        let ctx1 = document.getElementById('canvas-0').getContext('2d');
+        new window.Chart(ctx1, {
+          type: "line",
+          data: this.getData(0, data, color, borderWidth, fill),
+          options: this.getOptions(0),
+        });
+        let ctx2 = document.getElementById('canvas-1').getContext('2d');
+        new window.Chart(ctx2, {
+          type: "bar",
+          data: this.getData(1, data, color, borderWidth, fill),
+          options: this.getOptions(1),
+        })
+        let ctx3 = document.getElementById('canvas-2').getContext('2d');
+        new window.Chart(ctx3, {
+          type: "line",
+          data: this.getData(2, data, color, borderWidth, fill),
+          options: this.getOptions(2),
+        })
+        var config = {
+          type: 'line',
+          data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+              label: '总访问量',
+              backgroundColor: color[0],
+              borderColor: color[0],
+              data: [
+                this.randomNum(8000, 30000),
+                this.randomNum(8000, 30000),
+                this.randomNum(8000, 30000),
+                this.randomNum(8000, 30000),
+                this.randomNum(8000, 30000),
+                this.randomNum(8000, 30000),
+                this.randomNum(8000, 30000),
+              ],
+              fill: false,
+            }, {
+              label: '产品访问量',
+              fill: false,
+              backgroundColor: color[1],
+              borderColor: color[1],
+              data: [
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+              ],
+            }, {
+              label: '新闻访问量',
+              fill: false,
+              backgroundColor: color[2],
+              borderColor: color[2],
+              data: [
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+                this.randomNum(1000, 10000),
+              ],
+            }]
+          },
+          options: {
+            responsive: true,
+            title: {
+              display: false,
+            }
+          }
+        };
+        let ctx = document.getElementById('canvas').getContext('2d');
+        window.myLine = new window.Chart(ctx, config);
+      }
     },
   }
 </script>
@@ -573,10 +576,10 @@
         width: 100%;
     }
     .chartFooter {
-        margin-top: 10px;
-        padding-top: 5px;
+        margin-top: 15px;
+        padding-top: 10px;
         border-top: 1px solid #f0f0f0;
-        height: 31px;
+        height: 33px;
         overflow: hidden;
     }
     .chartFooter .label {

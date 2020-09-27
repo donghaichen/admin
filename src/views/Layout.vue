@@ -1,5 +1,6 @@
 <template>
     <a-spin class="global-loading" v-if="globalLoading"/>
+    <a-progress class="loading-bar" v-show="loadingBar" strokeWidth="3" :showInfo="false" :percent="loadingPercent" />
     <a-layout id="components-layout-demo-custom-trigger">
         <a-layout-sider v-model:collapsed="collapsed" collapsedWidth="50" :trigger="null" :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }" collapsible>
             <div class="sider-logo">
@@ -26,7 +27,7 @@
                     <span v-else-if="index === 6">
                         <ShoppingCartOutlined />
                     </span>
-                    <span>{{item.title}}</span>
+                    <span class="title">{{item.title}}</span>
                 </a-menu-item>
                 <a-sub-menu v-else :key="'sub' + index">
                     <template v-slot:title>
@@ -51,7 +52,7 @@
                         <span v-else-if="index === 8">
                            <InsuranceOutlined />
                         </span>
-                        <span>{{item.title}}</span>
+                        <span class="title">{{item.title}}</span>
                     </template>
                     <a-menu-item v-for="(subItem, subIndex) in item.sub" :key="'sub' + index + '-' + subIndex">
                         {{subItem.title}}
@@ -195,6 +196,8 @@
     },
     data() {
       return {
+        loadingBar: false,
+        loadingPercent: 0,
         selectedKeys: [0],
         openKeys: [''],
         preOpenKeys: ['sub1'],
@@ -212,9 +215,7 @@
     },
     mounted() {
       this.init()
-      setTimeout(() => {
-        this.globalLoading = false
-      }, 300)
+
     },
     // create() {
     //
@@ -223,6 +224,17 @@
     // },
     methods: {
       init() {
+        setTimeout(() => {
+          this.globalLoading = false
+        }, 800)
+        // if (this.loadingPercent < 100) {
+        //   setInterval(() => {
+        //     this.loadingPercent = this.loadingPercent + 1
+        //   }, 100)
+        // }else {
+        //   this.loadingBar = false
+        // }
+
         this.getNav()
       },
       getNav() {
@@ -258,7 +270,7 @@
     },
   };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     $loadingBg:rgba(45, 58, 75, .3);
     #components-layout-demo-custom-trigger .trigger {
         font-size: 18px;
@@ -279,6 +291,14 @@
     }
     .ant-layout-sider-collapsed .ant-menu-item, .ant-layout-sider-collapsed .ant-menu-submenu .ant-menu-submenu-title{
         padding: 0 15px !important;
+    }
+    .ant-layout-sider-collapsed li span.title{
+        display: none;
+    }
+    .loading-bar{
+        position: fixed;
+        z-index: 99;
+        top: -11px;
     }
     .sider-logo {
         position: relative;
