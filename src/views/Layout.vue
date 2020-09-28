@@ -20,7 +20,7 @@
                     :inline-collapsed="collapsed"
                     v-for="(item, index) in nav" :key="index"
             >
-                <a-menu-item v-if="!item.sub" :key="index">
+                <a-menu-item v-if="!item.sub" :key="index" @click="navClick(item.route)">
                     <span v-if="index === 0">
                         <DashboardOutlined />
                     </span>
@@ -54,7 +54,7 @@
                         </span>
                         <span class="title">{{item.title}}</span>
                     </template>
-                    <a-menu-item v-for="(subItem, subIndex) in item.sub" :key="'sub' + index + '-' + subIndex">
+                    <a-menu-item v-for="(subItem, subIndex) in item.sub" :key="'sub' + index + '-' + subIndex"  @click="navClick(subItem.route)">
                         {{subItem.title}}
                     </a-menu-item>
                 </a-sub-menu>
@@ -252,6 +252,9 @@
         setTimeout(() => {
           this.$message.success({ content: '数据缓存已清理完毕，请【Ctrl + F5】强制刷新试试！', key, duration: 2 });
         }, parseInt(Math.random() * 3000))
+      },
+      navClick(route) {
+        this.$router.push(route)
       },
       user(key) {
         switch (key) {

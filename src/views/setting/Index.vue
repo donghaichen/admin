@@ -1,5 +1,5 @@
 <template>
-    <a-card :bordered="false">
+    <a-card :bordered="false" class="setting">
         <a-tabs @change="callback">
             <a-tab-pane key="1" tab="基本设置">
                 <a-form
@@ -8,6 +8,7 @@
                         :rules="rules"
                         :label-col="labelCol"
                         :wrapper-col="wrapperCol"
+                        labelAlign="left"
                 >
                     <a-divider orientation="left">网站配置</a-divider>
                     <a-form-item label="网站语言" name="site_lang">
@@ -83,6 +84,7 @@
                         :rules="rules"
                         :label-col="labelCol"
                         :wrapper-col="wrapperCol"
+                        labelAlign="left"
                 >
                     <a-form-item label="公司名称" name="contact_company">
                         <a-input v-model:value="form.contact_company" />
@@ -139,25 +141,26 @@
                         :rules="rules"
                         :label-col="labelCol"
                         :wrapper-col="wrapperCol"
+                        labelAlign="left"
                 >
                     <a-divider orientation="left">系统安全设置</a-divider>
                     <a-form-item label="网站开关" name="security_status">
-                        <a-switch v-model:checked="form.security_status" @change="onChange" />
+                        <a-switch v-model:checked="form.security_status"/>
                     </a-form-item>
-                    <a-form-item label="关闭原因" name="security_close_info">
+                    <a-form-item v-if="!form.security_status" label="关闭原因" name="security_close_info">
                         <a-input v-model:value="form.security_close_info" />
                     </a-form-item>
                     <a-form-item label="开启 SSL" name="security_ssl_status">
-                        <a-switch v-model:checked="form.security_ssl_status" @change="onChange" />
+                        <a-switch v-model:checked="form.security_ssl_status"/>
                         <p class="meta">SSL 通信加密需要证书支持， 请选择浏览器信任的证书厂家申请证书</p>
                     </a-form-item>
-                    <a-form-item label="证书公钥" name="security_ssl_plubic_key">
+                    <a-form-item v-if="form.security_ssl_status" label="证书公钥" name="security_ssl_plubic_key">
                         <a-textarea :autosize="true" v-model:value="form.security_ssl_plubic_key" />
                     </a-form-item>
-                    <a-form-item label="证书私钥" name="security_ssl_private_key">
+                    <a-form-item v-if="form.security_ssl_status" label="证书私钥" name="security_ssl_private_key">
                         <a-textarea :autosize="true" v-model:value="form.security_ssl_private_key" />
                     </a-form-item>
-                    <a-form-item label="私钥密码" name="security_ssl_passwd">
+                    <a-form-item v-if="form.security_ssl_status" label="私钥密码" name="security_ssl_passwd">
                         <a-input v-model:value="form.security_ssl_passwd" />
                         <p class="meta">如无密码请留空</p>
                     </a-form-item>
@@ -176,9 +179,19 @@
                             <br>如（exe, sh, js, php, py）等文件不允许上传</p>
                     </a-form-item>
                     <a-form-item label="上传水印" name="watermark_status">
-                        <a-switch v-model:checked="form.watermark_status" @change="onChange" />
+                        <a-switch v-model:checked="form.watermark_status"/>
                     </a-form-item>
-                    <a-form-item label="水印图片" name="watermark_logo">
+                    <a-form-item v-if="form.watermark_status === true" label="水印类型" name="watermark_type">
+                        <a-radio-group name="radioGroup" v-model:value="form.watermark_type">
+                            <a-radio value="1">
+                                图片水印
+                            </a-radio>
+                            <a-radio value="2">
+                                文字水印
+                            </a-radio>
+                        </a-radio-group>
+                    </a-form-item>
+                    <a-form-item v-if="form.watermark_status === true && form.watermark_type === '1'" label="水印图片" name="watermark_logo">
                         <a-upload
                                 name="file"
                                 list-type="picture-card"
@@ -197,10 +210,10 @@
                         </a-upload>
                         <p class="meta">水印图片优先级高于水印文字，如需文字水印，请清空水印图片并设置文字水印</p>
                     </a-form-item>
-                    <a-form-item label="水印文字" name="watermark_text">
+                    <a-form-item v-if="form.watermark_status === true && form.watermark_type === '2'" label="水印文字" name="watermark_text">
                         <a-input v-model:value="form.watermark_text" />
                     </a-form-item>
-                    <a-form-item label="水印位置" name="watermark_position">
+                    <a-form-item v-if="form.watermark_status === true" label="水印位置" name="watermark_position">
                         <a-radio-group v-model:value="form.watermark_position" button-style="solid" style="width: 180px;">
                             <a-radio-button value="a">
                                 左上
@@ -245,22 +258,23 @@
                         :rules="rules"
                         :label-col="labelCol"
                         :wrapper-col="wrapperCol"
+                        labelAlign="left"
                 >
                     <a-form-item label="开放注册" name="user_allow_register">
                         <a-switch v-model:checked="form.user_allow_register" />
                     </a-form-item>
                     <a-form-item label="注册审核" name="user_register_verify">
                         <a-radio-group name="radioGroup" v-model:value="form.user_register_verify">
-                            <a-radio value="0">
+                            <a-radio value="1">
                                 无需审核
                             </a-radio>
-                            <a-radio value="1">
+                            <a-radio value="2">
                                 邮件审核
                             </a-radio>
-                            <a-radio value="2">
+                            <a-radio value="3">
                                 短信审核
                             </a-radio>
-                            <a-radio value="3">
+                            <a-radio value="4">
                                 人工审核
                             </a-radio>
                         </a-radio-group>
@@ -285,6 +299,7 @@
                         :rules="rules"
                         :label-col="labelCol"
                         :wrapper-col="wrapperCol"
+                        labelAlign="left"
                 >
                     <a-form-item label="SKU 配置" name="product_sku">
                         <a-textarea :autosize="true" v-model:value="form.product_sku" />
@@ -317,7 +332,7 @@
     data() {
       return {
         labelCol: { span: 3 },
-        wrapperCol: { span: 14 },
+        wrapperCol: { span: 12 },
         fileList: [],
         headers: {
           authorization: 'authorization-text',
@@ -343,7 +358,7 @@
           contact_email: '',
           contact_address: '',
           security_status: true,
-          security_close_info: '',
+          security_close_info: '系统升级中，请稍后再试',
           security_is_ssl: false,
           security_ssl_public_key: '',
           security_ssl_private_key: '',
@@ -352,10 +367,11 @@
           upload_max_filesize: '10',
           allow_upload_filetype: 'jpg,png,gif,pdf,doc,docx,xsl,xslx,ppt,zip,rar,mp4,txt',
           watermark_status: false,
+          watermark_type: '1',
           watermark_logo: '',
           watermark_text: '',
           watermark_position: 'i',
-          user_allow_register: false,
+          user_allow_register: true,
           user_register_verify: '1',
           user_register_limit_str: '中国,国家,政府,反动,恐怖,公安,枪,先烈,管理,master,admin',
           product_sku: '颜色:赤,橙,黄,绿,青,蓝,紫\n' +
@@ -364,26 +380,6 @@
             '产地:中国,美国,日本',
         },
         rules: {
-          name: [
-            { required: true, message: 'Please input Activity name', trigger: 'blur' },
-            { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' },
-          ],
-          region: [{ required: true, message: 'Please select Activity zone', trigger: 'change' }],
-          date1: [
-            { required: true, message: 'Please pick a date', trigger: 'change', type: 'object' },
-          ],
-          type: [
-            {
-              type: 'array',
-              required: true,
-              message: 'Please select at least one activity type',
-              trigger: 'change',
-            },
-          ],
-          resource: [
-            { required: true, message: 'Please select activity resource', trigger: 'change' },
-          ],
-          desc: [{ required: true, message: 'Please input activity form', trigger: 'blur' }],
         },
       };
     },
@@ -419,6 +415,10 @@
   };
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.setting{
+    .ant-form {
+        padding: 0 15px;
+    }
+}
 </style>
