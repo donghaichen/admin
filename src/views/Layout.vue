@@ -1,5 +1,5 @@
 <template>
-    <a-spin class="global-loading" v-if="globalLoading"/>
+    <a-spin class="global-loading" size="large" v-if="globalLoading"/>
     <a-progress class="loading-bar" v-show="loadingBar" strokeWidth="3" :showInfo="false" :percent="loadingPercent" />
     <a-layout id="components-layout-demo-custom-trigger">
         <a-layout-sider v-model:collapsed="collapsed" collapsedWidth="50" :trigger="null" :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }" collapsible>
@@ -220,7 +220,7 @@
       init() {
         setTimeout(() => {
           this.globalLoading = false
-        }, 800)
+        }, 450)
         this.getNav()
       },
       getNav() {
@@ -251,17 +251,26 @@
         this.$message.loading({ content: '缓存数据清理中...', key });
         setTimeout(() => {
           this.$message.success({ content: '数据缓存已清理完毕，请【Ctrl + F5】强制刷新试试！', key, duration: 2 });
-        }, parseInt(Math.random() * 3000))
+        }, parseInt(Math.random() * 4000))
       },
       navClick(route) {
+        this.globalLoading = true
         this.$router.push(route)
+        setTimeout(() => {
+          this.globalLoading = false
+        }, 450)
       },
+
       user(key) {
+        this.globalLoading = true
         switch (key) {
           case 'logout':
             this.$router.push('/login')
             break
         }
+        setTimeout(() => {
+          this.globalLoading = false
+        }, 450)
       },
     },
   };

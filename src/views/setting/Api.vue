@@ -33,8 +33,27 @@
                     <a-form-item ref="name" label="Token(令牌)" name="weixin_mp_token">
                         <a-input v-model:value="form.weixin_mp_token" />
                     </a-form-item>
-                    <a-form-item ref="name" label="EncodingAESKey" name="weixin_mp_asekey">
-                        <a-input v-model:value="form.weixin_mp_asekey" />
+                    <a-form-item ref="name" label="消息加解密方式" name="weixin_mp_encode">
+                        <a-radio-group name="radioGroup" v-model:value="form.weixin_mp_encode">
+                            <a-radio value="1">
+                                明文模式
+                            </a-radio>
+                            <a-radio value="2">
+                                消息模式
+                            </a-radio>
+                            <a-radio value="3">
+                                安全模式
+                            </a-radio>
+                        </a-radio-group>
+                        <p class="meta">
+                            如需使用安全模式请在管理中心修改，仅限服务号和认证订阅号
+                        </p>
+                    </a-form-item>
+                    <a-form-item v-if="form.weixin_mp_encode === '3'" ref="name" label="EncodingAESKey" name="weixin_mp_encodingaeskey">
+                        <a-input v-model:value="form.weixin_mp_encodingaeskey" />
+                        <p class="meta">
+                            公众号消息加解密 Key，在使用安全模式情况下要填写该值，请先在管理中心修改，然后填写该值，仅限服务号和认证订阅号
+                        </p>
                     </a-form-item>
                     <a-form-item ref="name" label="微信号：" name="weixin_mp_id">
                         <a-input v-model:value="form.weixin_mp_id" />
@@ -49,17 +68,17 @@
                                 action="https://demo.haoyupay.com/admin/api/v3/upload?type=weixin_mp_qr"
                                 @change="uploadChange"
                         >
-                            <img style="height: 100px" v-if="form.weixin_mp_qr.length > 0" :src="form.weixin_mp_qr" alt="avatar" />
+                            <img style="height: 100px" v-if="form.weixin_mp_qr.length > 0 && uploadLoading === false" :src="form.weixin_mp_qr" />
                             <div v-else>
                                 <!-- todo -->
-                                <loading-outlined v-if="loading" />
+                                <loading-outlined v-if="uploadLoading" />
                                 <plus-outlined v-else />
                                 <div class="ant-upload-text">上传</div>
                             </div>
                         </a-upload>
                         <p class="meta">点击图片可再次上传以更改图片 </p>
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -81,7 +100,7 @@
                     <a-form-item ref="name" label="AppSecret" name="weixin_mini_app_secret">
                         <a-input v-model:value="form.weixin_mini_app_secret" />
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -129,7 +148,7 @@
                             <a-textarea :autosize="true" v-model:value="form.alipay_public_key" />
                         </a-form-item>
                     </div>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                            保存
                         </a-button>
@@ -215,7 +234,7 @@
                             <a-input v-model:value="form.object_cos_url" />
                         </a-form-item>
                     </div>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -267,7 +286,7 @@
                             </p>
                         </a-form-item>
                     </div>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                            保存
                         </a-button>
@@ -316,7 +335,7 @@
                     <a-form-item ref="name" label="AppId" name="appid">
                         <a-input v-model:value="form.appid" />
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -329,12 +348,18 @@
 
 
 <script>
+  import { PlusOutlined, LoadingOutlined } from '@ant-design/icons-vue';
   export default {
+    components: {
+      LoadingOutlined,
+      PlusOutlined,
+    },
     data() {
       return {
+        uploadLoading: false,
         activeTab: '1',
-        labelCol: { span: 4 },
-        wrapperCol: { span: 14 },
+        labelCol: { span: 3 },
+        wrapperCol: { span: 12 },
         other: '',
         form: {
           weixin_mp_type: '1',
@@ -342,7 +367,8 @@
           weixin_mp_appid: '',
           weixin_mp_apps_secret: '',
           weixin_mp_token: '',
-          weixin_mp_asekey: '',
+          weixin_mp_encode: '1',
+          weixin_mp_encodingaeskey: '',
           weixin_mp_id: '',
           weixin_mp_qr: '',
           weixin_mini_appid: '',
@@ -406,11 +432,28 @@
     },
     methods: {
       uploadChange(info) {
-        if (info.file.status === 'done') {
-          this.$message.success(`上传成功`);
-          this.form[info.file.response.data.type] = info.file.response.data.url
-        } else if (info.file.status === 'error') {
-          this.$message.error(`上传错误`);
+        let file = info.file;
+        if (file.status === 'uploading') {
+          this.uploadLoading = true;
+          return;
+        }
+        if (file.status === 'done') {
+          let response = file.response
+          console.log(response.code)
+          if (response.code === 0){
+            this.$message.success(`上传成功`);
+            this.form[response.data.type] = response.data.url
+          }else {
+            let msg = response.msg
+            msg = msg.length > 0 ? msg : '上传错误'
+            this.$message.error(msg);
+          }
+          setTimeout(() => {
+            this.uploadLoading = false
+          }, 300)
+        } else if (file.status === 'error') {
+          this.$message.error(`上传错误`)
+          this.uploadLoading = false
         }
       },
       goTab(index) {

@@ -43,11 +43,12 @@
                                 :show-upload-list="false"
                                 action="https://demo.haoyupay.com/admin/api/v3/upload?type=site_logo"
                                 @change="uploadChange"
+                                accept=".jpg,.png,.jpeg"
                         >
-                            <img style="height: 80px" v-if="form.site_logo.length > 0" :src="form.site_logo" alt="avatar" />
+                            <img style="height: 80px" v-if="form.site_logo.length > 0 && uploadLoading === false" :src="form.site_logo" />
                             <div v-else>
                                 <!-- todo -->
-                                <loading-outlined v-if="loading" />
+                                <loading-outlined v-if="uploadLoading" />
                                 <plus-outlined v-else />
                                 <div class="ant-upload-text">上传</div>
                             </div>
@@ -70,7 +71,7 @@
                     <a-form-item label="网站描述" name="seo_description">
                         <a-textarea v-model:value="form.seo_description" />
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -111,10 +112,10 @@
                                 action="https://demo.haoyupay.com/admin/api/v3/upload?type=contact_qrcode"
                                 @change="uploadChange"
                         >
-                            <img style="height: 100px" v-if="form.contact_qrcode.length > 0" :src="form.contact_qrcode" alt="avatar" />
+                            <img style="height: 100px" v-if="form.contact_qrcode.length > 0 && uploadLoading === false" :src="form.contact_qrcode" />
                             <div v-else>
                                 <!-- todo -->
-                                <loading-outlined v-if="loading" />
+                                <loading-outlined v-if="uploadLoading" />
                                 <plus-outlined v-else />
                                 <div class="ant-upload-text">上传</div>
                             </div>
@@ -127,7 +128,7 @@
                     <a-form-item label="联系地址" name="contact_address">
                         <a-input v-model:value="form.contact_address" />
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -200,10 +201,10 @@
                                 action="https://demo.haoyupay.com/admin/api/v3/upload?type=watermark_logo"
                                 @change="uploadChange"
                         >
-                            <img style="height: 80px" v-if="form.watermark_logo.length > 0" :src="form.watermark_logo" alt="avatar" />
+                            <img style="height: 80px" v-if="form.watermark_logo.length > 0 && uploadLoading === false" :src="form.watermark_logo" />
                             <div v-else>
                                 <!-- todo -->
-                                <loading-outlined v-if="loading" />
+                                <loading-outlined v-if="uploadLoading" />
                                 <plus-outlined v-else />
                                 <div class="ant-upload-text">上传</div>
                             </div>
@@ -244,7 +245,7 @@
                             </a-radio-button>
                         </a-radio-group>
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -285,7 +286,7 @@
                             设置不允许包含在账号中的字符串，多个字符串以英文逗号“,”分隔
                         </p>
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -310,7 +311,7 @@
                             &emsp;&emsp;产地:中国,美国,日本<br>
                         </p>
                     </a-form-item>
-                    <a-form-item :wrapper-col="{ span: 14, offset: 4 }">
+                    <a-form-item :wrapper-col="{ span: 14, offset: 3 }">
                         <a-button type="primary" @click="onSubmit">
                             保存
                         </a-button>
@@ -323,14 +324,15 @@
 
 
 <script>
-  import { PlusOutlined, LoadingOutlined  } from '@ant-design/icons-vue';
+  import { PlusOutlined, LoadingOutlined } from '@ant-design/icons-vue';
   export default {
     components: {
-      PlusOutlined,
       LoadingOutlined,
+      PlusOutlined,
     },
     data() {
       return {
+        uploadLoading: false,
         labelCol: { span: 3 },
         wrapperCol: { span: 12 },
         fileList: [],
@@ -391,11 +393,28 @@
         console.log(`a-switch to ${checked}`);
       },
       uploadChange(info) {
-        if (info.file.status === 'done') {
-          this.$message.success(`上传成功`);
-          this.form[info.file.response.data.type] = info.file.response.data.url
-        } else if (info.file.status === 'error') {
-          this.$message.error(`上传错误`);
+        let file = info.file;
+        if (file.status === 'uploading') {
+          this.uploadLoading = true;
+          return;
+        }
+        if (file.status === 'done') {
+          let response = file.response
+          console.log(response.code)
+          if (response.code === 0){
+            this.$message.success(`上传成功`);
+            this.form[response.data.type] = response.data.url
+          }else {
+            let msg = response.msg
+            msg = msg.length > 0 ? msg : '上传错误'
+            this.$message.error(msg);
+          }
+          setTimeout(() => {
+            this.uploadLoading = false
+          }, 300)
+        } else if (file.status === 'error') {
+          this.$message.error(`上传错误`)
+          this.uploadLoading = false
         }
       },
       onSubmit() {
